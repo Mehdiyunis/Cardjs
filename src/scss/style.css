@@ -1,0 +1,285 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+:root {
+  --bg: #111c1e;
+  --clr-1: #00c2ff;
+  --clr-2: #33ff8c;
+  --clr-3: #ffc640;
+  --clr-4: #e54cff;
+  --blur: 1rem;
+  --fs: clamp(3rem, 8vw, 7rem);
+  --ls: clamp(-1.75px, -0.25vw, -3.5px);
+}
+
+body {
+  background-color: rgb(27, 10, 53);
+  font-family: "Open Sans", sans-serif;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+#home-car-cards-section .car-card-container {
+  display: flex;
+  justify-content: center;
+  max-width: 1440px;
+  margin: auto;
+  row-gap: 20px;
+  padding: 30px 0;
+}
+#home-car-cards-section .car-card-container .car-card {
+  /* border: solid black 1px; */
+  display: flex;
+  padding: 0 20px;
+}
+#home-car-cards-section .car-card-container .car-card .car-card-inside {
+  width: 80%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 20px;
+}
+#home-car-cards-section .car-card-container .car-card .car-card-inside .card-img-div {
+  width: 100%;
+  height: 50%;
+}
+#home-car-cards-section .car-card-container .car-card .car-card-inside .card-img-div .car-img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+#home-car-cards-section .car-card-container .car-card .car-card-inside .card-content {
+  margin-top: 30px;
+  padding: 20px 25px;
+  border: #000 solid;
+  border-width: 2px 0 0 0;
+}
+#home-car-cards-section .car-card-container .car-card .car-card-inside .card-content .card-title {
+  padding: 0 0 0 5px;
+  border: rgb(71, 0, 177) solid;
+  border-width: 0 0 0 3px;
+  font-size: 1.3rem;
+  margin: 0 0 10px 0;
+}
+#home-car-cards-section .car-card-container .car-card .car-card-inside .card-content .card-text {
+  color: rgb(27, 10, 53);
+  font-size: 1rem;
+}
+
+#home-header {
+  width: 100%;
+  height: 70px;
+  background-color: purple;
+}
+#home-header .home-header-nav {
+  max-width: 1440px;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+}
+#home-header .home-header-nav .content {
+  text-align: center;
+  color: #fff;
+}
+#home-header .home-header-nav .content .title {
+  border-radius: 6px;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  margin: 0;
+}
+#home-header .home-header-nav .content .title .aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  mix-blend-mode: darken;
+  pointer-events: none;
+}
+#home-header .home-header-nav .content .title .aurora .aurora__item {
+  overflow: hidden;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: var(--clr-1);
+  border-radius: 37% 29% 27% 27%/28% 25% 41% 37%;
+  filter: blur(var(--blur));
+  mix-blend-mode: overlay;
+}
+#home-header .home-header-nav .content .title .aurora .aurora__item:nth-of-type(1) {
+  top: -50%;
+  animation: aurora-border 4s ease-in-out infinite, aurora-1 7s ease-in-out infinite alternate;
+}
+#home-header .home-header-nav .content .title .aurora .aurora__item:nth-of-type(2) {
+  background-color: var(--clr-3);
+  right: 0;
+  top: 0;
+  animation: aurora-border 4s ease-in-out infinite, aurora-2 7s ease-in-out infinite alternate;
+}
+#home-header .home-header-nav .content .title .aurora .aurora__item:nth-of-type(3) {
+  background-color: var(--clr-2);
+  left: 0;
+  bottom: 0;
+  animation: aurora-border 4s ease-in-out infinite, aurora-3 4s ease-in-out infinite alternate;
+}
+#home-header .home-header-nav .content .title .aurora .aurora__item:nth-of-type(4) {
+  background-color: var(--clr-4);
+  right: 0;
+  bottom: -50%;
+  animation: aurora-border 4s ease-in-out infinite, aurora-4 10s ease-in-out infinite alternate;
+}
+@keyframes aurora-1 {
+  0% {
+    top: 0;
+    right: 0;
+  }
+  50% {
+    top: 100%;
+    right: 75%;
+  }
+  75% {
+    top: 100%;
+    right: 25%;
+  }
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+@keyframes aurora-2 {
+  0% {
+    top: -50%;
+    left: 0%;
+  }
+  60% {
+    top: 100%;
+    left: 75%;
+  }
+  85% {
+    top: 100%;
+    left: 25%;
+  }
+  100% {
+    top: -50%;
+    left: 0%;
+  }
+}
+@keyframes aurora-3 {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+  40% {
+    bottom: 100%;
+    left: 75%;
+  }
+  65% {
+    bottom: 40%;
+    left: 50%;
+  }
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
+@keyframes aurora-4 {
+  0% {
+    bottom: -50%;
+    right: 0;
+  }
+  50% {
+    bottom: 0%;
+    right: 40%;
+  }
+  90% {
+    bottom: 50%;
+    right: 25%;
+  }
+  100% {
+    bottom: -50%;
+    right: 0;
+  }
+}
+@keyframes aurora-border {
+  0% {
+    border-radius: 37% 29% 27% 27%/28% 25% 41% 37%;
+  }
+  25% {
+    border-radius: 47% 29% 39% 49%/61% 19% 66% 26%;
+  }
+  50% {
+    border-radius: 57% 23% 47% 72%/63% 17% 66% 33%;
+  }
+  75% {
+    border-radius: 28% 49% 29% 100%/93% 20% 64% 25%;
+  }
+  100% {
+    border-radius: 37% 29% 27% 27%/28% 25% 41% 37%;
+  }
+}
+#home-header .home-header-nav .home-logo-container {
+  height: 100%;
+  padding: 5px;
+}
+#home-header .home-header-nav .home-logo-container .logo {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#home-header .home-header-nav .header-search {
+  display: flex;
+  align-items: center;
+}
+#home-header .home-header-nav .header-search .header-search-input {
+  width: 400px;
+  height: 60%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-align: start;
+}
+#home-header .home-header-nav .header-date {
+  display: flex;
+  align-items: center;
+}
+#home-header .home-header-nav .header-date .date {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.82rem;
+  padding: 0 0 0 10px;
+  border: rgb(71, 0, 177) solid;
+  border-width: 0 0 0 2px;
+  line-height: 1.82rem;
+}
+
+#home-footer {
+  width: 100%;
+  height: 70px;
+  background-color: #212529;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1rem;
+}
+#home-footer .footer-text {
+  margin: 0;
+  color: #fff;
+  text-transform: capitalize;
+}/*# sourceMappingURL=style.css.map */
