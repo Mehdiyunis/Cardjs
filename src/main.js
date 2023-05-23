@@ -95,6 +95,50 @@ selector(".date").innerHTML = date.join("-")
 
 
 
+const span = document.createElement('span');
+
+const body = document.body;
+
+body.append(span);
+
+span.innerHTML = 'Mehdi'
+
+span.style.cssText = `
+font-size: 1.3rem;
+font-weight: 500;
+color: #f0f0f0;
+font-family: "Open Sans", sans-serif;
+position: absolute;
+top: -100px;
+left: 50%;
+transform: translateX(-50%);
+padding: 17px 90px;
+border: 0;
+border-radius: 20px;
+transition: top .6s;
+`
+
+window.addEventListener('offline', ()=>{
+    span.innerHTML = "You are Offline"
+    span.style.cssText += `
+    background-color: #ee0000; 
+    box-shadow: 0 0 25px 3px #ee0000; 
+    top: 50px;
+    `;
+
+    setTimeout(()=> span.style.cssText += `top: -100px`, 5000)
+})
+
+window.addEventListener('online', ()=>{
+    span.innerHTML = "You are Online"
+    span.style.cssText += `
+    background-color: #33ff8c; 
+    box-shadow: 0 0 25px 3px #33ff8c; 
+    top: 50px;
+    `;
+
+    setTimeout(()=> span.style.cssText += `top: -100px`, 5000)
+})
 
 
 
