@@ -4,6 +4,7 @@
     background-color: #212529;
     @include flex($j-content: center, $a-items: center);
     line-height: 1rem;
+    margin-bottom: 10px;
     
     .footer-text{
         margin: 0;

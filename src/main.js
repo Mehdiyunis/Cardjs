@@ -141,4 +141,53 @@ window.addEventListener('online', ()=>{
 })
 
 
+const btn = document.createElement('button');
+
+body.insertAdjacentElement('afterbegin', btn);
+
+btn.innerHTML = 'BG Color';
+
+btn.style.cssText = `
+position: absolute;
+top: 0px;
+left: 5px;
+z-index: 9999;
+padding: 10px 30px;
+border: none;
+background-color: #001149;
+color: #fff;
+font-size: 1rem;
+font-weight: 300;
+cursor: pointer;
+`
+
+btn.addEventListener('click', ()=>{
+    const c1 = Math.floor(Math.random() * 256);
+    const c2 = Math.floor(Math.random() * 256);
+    const c3 = Math.floor(Math.random() * 256);
+    const c4 = Math.floor(Math.random() * 256);
+    const c5 = Math.floor(Math.random() * 256);
+    const c6 = Math.floor(Math.random() * 256);
+    const deg = Math.floor(Math.random() * 361);
+    body.style.cssText = `background-image: linear-gradient( ${deg}deg, rgb(${c1}, ${c2}, ${c3}),rgb(${c4}, ${c5}, ${c6}));`;
+    console.log(c1,c2,c3,c4,c5,c6,deg);
+});
+
+
+
+window.addEventListener('scroll', () => {
+    const text = document.querySelector('.text')
+
+    const html = document.documentElement || document.body
+    const cHeight = html.clientHeight
+    const fullHeight = html.scrollHeight
+    const sHeight = html.scrollTop
+
+    const height = fullHeight - cHeight;
+    let textWidht = sHeight / height * 100;
+
+
+    text.style.width = `${textWidht}%`
+  })
+
 
